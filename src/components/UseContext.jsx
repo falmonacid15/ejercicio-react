@@ -2,7 +2,6 @@ import React from "react";
 import { useTheme } from "./ThemeContext";
 
 export default function UseContextHook() {
-  // Using the context from ThemeContext.jsx
   const { theme, toggleTheme } = useTheme();
 
   return (
@@ -16,7 +15,6 @@ export default function UseContextHook() {
         </p>
       </div>
 
-      {/* Explanation section */}
       <div className="w-full max-w-2xl p-6 mb-6 bg-gray-100 dark:bg-gray-800 rounded-lg">
         <h2 className="font-bold text-lg text-black dark:text-white mb-3">
           ¿Cómo funciona useContext?
@@ -53,7 +51,6 @@ export default function UseContextHook() {
         </div>
       </div>
 
-      {/* Demo section */}
       <div className="w-full max-w-2xl p-6 border rounded-lg shadow-md bg-white dark:bg-gray-800">
         <h2 className="font-bold text-lg text-black dark:text-white mb-4">
           Demostración con ThemeContext
@@ -97,14 +94,12 @@ function MiComponente() {
         </div>
       </div>
 
-      {/* Context flow visualization */}
       <div className="w-full max-w-2xl mt-6 p-6 border rounded-lg shadow-md bg-white dark:bg-gray-800">
         <h2 className="font-bold text-lg text-black dark:text-white mb-4">
           Flujo de datos con Context
         </h2>
 
         <div className="relative py-8">
-          {/* Provider */}
           <div className="p-4 border-2 border-blue-500 rounded-lg mb-6">
             <p className="font-bold text-center text-black dark:text-white">
               ThemeProvider
@@ -114,10 +109,8 @@ function MiComponente() {
             </p>
           </div>
 
-          {/* Arrow */}
           <div className="absolute left-1/2 -ml-0.5 w-1 h-8 bg-blue-500"></div>
 
-          {/* Components */}
           <div className="grid grid-cols-2 gap-4">
             <div className="p-3 border border-green-500 rounded-lg">
               <p className="font-bold text-center text-black dark:text-white">

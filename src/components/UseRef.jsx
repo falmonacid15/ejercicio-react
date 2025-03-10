@@ -1,30 +1,24 @@
 import React, { useState, useRef, useEffect } from "react";
 
 export default function UseRefHook() {
-  // State for re-rendering component
   const [count, setCount] = useState(0);
 
-  // Create refs
   const inputRef = useRef(null);
   const previousCountRef = useRef(null);
   const renderCountRef = useRef(0);
 
-  // Track renders without causing re-renders
   useEffect(() => {
     renderCountRef.current += 1;
   });
 
-  // Track previous count value
   useEffect(() => {
     previousCountRef.current = count;
   }, [count]);
 
-  // Focus the input field
   const focusInput = () => {
     inputRef.current.focus();
   };
 
-  // Change input value directly (DOM manipulation)
   const setInputValue = () => {
     inputRef.current.value = "Texto modificado con useRef";
   };
@@ -57,7 +51,6 @@ export default function UseRefHook() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-2xl">
-        {/* DOM Reference Example */}
         <div className="flex flex-col p-4 border rounded-lg shadow-sm bg-white dark:bg-gray-800">
           <h2 className="font-bold text-lg text-black dark:text-white mb-2">
             Ejemplo 1: Referencia a DOM
@@ -84,7 +77,6 @@ export default function UseRefHook() {
           </div>
         </div>
 
-        {/* Persisting Values Example */}
         <div className="flex flex-col p-4 border rounded-lg shadow-sm bg-white dark:bg-gray-800">
           <h2 className="font-bold text-lg text-black dark:text-white mb-2">
             Ejemplo 2: Persistencia de valores
@@ -110,7 +102,6 @@ export default function UseRefHook() {
           </button>
         </div>
 
-        {/* Timer Example */}
         <div className="flex flex-col p-4 border rounded-lg shadow-sm bg-white dark:bg-gray-800 col-span-1 md:col-span-2">
           <h2 className="font-bold text-lg text-black dark:text-white mb-2">
             Ejemplo 3: Guardar intervalos/timeouts
@@ -122,7 +113,6 @@ export default function UseRefHook() {
   );
 }
 
-// Timer component to demonstrate storing timers in refs
 function TimerExample() {
   const [seconds, setSeconds] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
@@ -147,7 +137,6 @@ function TimerExample() {
     setSeconds(0);
   };
 
-  // Clean up interval on unmount
   useEffect(() => {
     return () => {
       if (timerRef.current) {

@@ -5,7 +5,6 @@ export default function UseMemoHook() {
   const [darkMode, setDarkMode] = useState(false);
   const [inputNumber, setInputNumber] = useState(20);
 
-  // Expensive calculation - will be memoized with useMemo
   const calculateFactorial = (num) => {
     console.log("Calculating factorial...");
     if (num < 0) return "Error: Negative number";
@@ -19,15 +18,12 @@ export default function UseMemoHook() {
     return result;
   };
 
-  // Using useMemo to memoize the factorial calculation
   const factorial = useMemo(() => {
     return calculateFactorial(inputNumber);
   }, [inputNumber]);
 
-  // Not using useMemo - will recalculate on every render
   const factorialWithoutMemo = calculateFactorial(inputNumber);
 
-  // Simple value that changes with count
   const countMessage = useMemo(() => {
     console.log("Calculating count message...");
     return `Current count: ${count}`;

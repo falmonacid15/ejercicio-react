@@ -1,22 +1,15 @@
 import React, { useState } from "react";
 
 export default function UseStateHook() {
-  // Basic counter example
   const [contador, setContador] = useState(0);
-
-  // Text input example
   const [text, setText] = useState("");
-
-  // Toggle example
   const [isVisible, setIsVisible] = useState(true);
 
-  // Object state example
   const [person, setPerson] = useState({
     name: "User",
     age: 25,
   });
 
-  // Handle name change
   const handleNameChange = (e) => {
     setPerson({
       ...person,
@@ -24,7 +17,6 @@ export default function UseStateHook() {
     });
   };
 
-  // Handle age change
   const handleAgeChange = (e) => {
     setPerson({
       ...person,
@@ -41,7 +33,6 @@ export default function UseStateHook() {
         <p className="text-black dark:text-white">manejar estados</p>
       </div>
 
-      {/* State visualization panel */}
       <div className="w-full max-w-2xl p-4 mb-6 bg-gray-100 dark:bg-gray-800 rounded-lg">
         <h2 className="font-bold text-lg text-black dark:text-white mb-2">
           ¿Cómo funciona useState?
@@ -61,7 +52,6 @@ export default function UseStateHook() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-2xl">
-        {/* Counter example */}
         <div className="flex flex-col p-4 border rounded-lg shadow-sm bg-white dark:bg-gray-800">
           <h2 className="font-bold text-lg text-black dark:text-white mb-2">
             Ejemplo: Contador
@@ -91,7 +81,6 @@ export default function UseStateHook() {
           </div>
         </div>
 
-        {/* Text input example */}
         <div className="flex flex-col p-4 border rounded-lg shadow-sm bg-white dark:bg-gray-800">
           <h2 className="font-bold text-lg text-black dark:text-white mb-2">
             Ejemplo: Texto
@@ -109,7 +98,6 @@ export default function UseStateHook() {
           </p>
         </div>
 
-        {/* Toggle visibility example */}
         <div className="flex flex-col p-4 border rounded-lg shadow-sm bg-white dark:bg-gray-800">
           <h2 className="font-bold text-lg text-black dark:text-white mb-2">
             Ejemplo: Valor booleano
@@ -129,7 +117,6 @@ export default function UseStateHook() {
           )}
         </div>
 
-        {/* Object state example */}
         <div className="flex flex-col p-4 border rounded-lg shadow-sm bg-white dark:bg-gray-800">
           <h2 className="font-bold text-lg text-black dark:text-white mb-2">
             Ejemplo: Objeto

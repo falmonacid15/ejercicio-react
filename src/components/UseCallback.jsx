@@ -1,6 +1,5 @@
 import React, { useState, useCallback, useEffect, memo } from "react";
 
-// Memoized child component that only re-renders when its props change
 const Button = memo(({ handleClick, name }) => {
   console.log(`${name} button rendered`);
   return (
@@ -21,17 +20,14 @@ export default function UseCallbackHook() {
     withoutCallback: 0,
   });
 
-  // Function with useCallback - will not be recreated on every render
   const incrementWithCallback = useCallback(() => {
     setCount((prevCount) => prevCount + 1);
   }, []);
 
-  // Function without useCallback - will be recreated on every render
   const incrementWithoutCallback = () => {
     setOtherCount((prevCount) => prevCount + 1);
   };
 
-  // Track render counts for demonstration
   useEffect(() => {
     setRenderCount((prev) => ({
       ...prev,
@@ -55,7 +51,6 @@ export default function UseCallbackHook() {
         <p className="text-black dark:text-white">Memorización de funciones</p>
       </div>
 
-      {/* Explanation section */}
       <div className="w-full max-w-2xl p-6 mb-6 bg-gray-100 dark:bg-gray-800 rounded-lg">
         <h2 className="font-bold text-lg text-black dark:text-white mb-3">
           ¿Cómo funciona useCallback?
@@ -86,7 +81,6 @@ export default function UseCallbackHook() {
         </div>
       </div>
 
-      {/* Demo section */}
       <div className="w-full max-w-2xl p-6 border rounded-lg shadow-md bg-white dark:bg-gray-800">
         <h2 className="font-bold text-lg text-black dark:text-white mb-4">
           Demostración de useCallback
@@ -146,7 +140,6 @@ export default function UseCallbackHook() {
         </div>
       </div>
 
-      {/* Comparison with useMemo */}
       <div className="w-full max-w-2xl mt-6 p-6 border rounded-lg shadow-md bg-white dark:bg-gray-800">
         <h2 className="font-bold text-lg text-black dark:text-white mb-4">
           useCallback vs useMemo
